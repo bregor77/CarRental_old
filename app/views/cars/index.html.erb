@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cars</h1>
+
+Our Car Rental has <%= Car.public_count %> cars and counting!
+
+<div id="cars">
+  <% @cars.each do |car| %>
+    <%= render car %>
+    <p>
+      <%= link_to "Show this car", car %>
+    </p>
+    <% unless car.archived? %>
+      <%# <li> %>
+        <%#= link_to car.brand, car %>
+      <%# </li> %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New car", new_car_path %>
