@@ -1,4 +1,7 @@
 class CarsController < ApplicationController
+  
+  http_basic_authenticate_with name: "admin", password: "123456", only: :destroy
+  
   before_action :set_car, only: %i[ show edit update destroy ]
 
   # GET /cars or /cars.json
